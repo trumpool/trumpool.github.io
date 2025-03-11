@@ -17,7 +17,7 @@ I am very fortunate to be advised by [Prof. SiLiang Tang](https://person.zju.edu
 
 You can find my CV here: [Xiaoyang Wan's Curriculum Vitae](../assets/pdf/CV%20Xiaoyang%20Wan.pdf).
 
-[Email](jeffvan2002@163.com) / [Github](https://github.com/trumpool) / 
+[Email](3210105708@zju.edu.cn) / [Github](https://github.com/trumpool)
 
 <!-- A data-driven personal website
 ======
