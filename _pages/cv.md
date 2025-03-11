@@ -8,4 +8,4 @@ redirect_from:
 ---
 
 
-<embed src="../files/CV.pdf" width="600" height="400" type="pdf">
+<embed src="../files/CV.pdf" width="600" height="400" type="application/pdf">
