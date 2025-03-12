@@ -13,7 +13,7 @@ I'm an undergraduate from [College of Computer Science](http://www.en.cs.zju.edu
 
 My research interest includes natural language processing, multimodal models and image editing.
 
-I am very fortunate to be advised by [Prof. SiLiang Tang](https://person.zju.edu.cn/en/siliang) and [Prof. Juncheng Li](https://scholar.google.com.hk/citations?user=lm9s-QgAAAAJ&hl=zh-CN) of DCD Lab from [School of Computer Science](http://www.en.cs.zju.edu.cn/), Zhejiang University. 
+I am very fortunate to be advised by [Prof. SiLiang Tang](https://person.zju.edu.cn/en/siliang) and [Prof. Juncheng Li](https://scholar.google.com.hk/citations-user=lm9s-QgAAAAJ&hl=zh-CN) of DCD Lab from [School of Computer Science](http://www.en.cs.zju.edu.cn/), Zhejiang University. 
 
 You can find my CV here: [Xiaoyang Wan's Curriculum Vitae](../assets/CV.pdf).
 
@@ -65,15 +65,17 @@ Here is my research experience. I am interested in the intersect of large langua
 -----
 **AnyEdit: Unified High-Quality Image Edit with Any Idea
 *Advisors: Juncheng Li, Aug 2024 - Jan 2025
-? Debugged and optimized existing image editing pipelines, including diffusion models and HuggingFace frameworks, to address challenges in large-scale image editing tasks.
-? Configured and executed various scripts for the AnyEdit project, including setting up the environment(e.g., Conda), downloading pre-trained weights, and running multiple pipelines with specified parameters.
-? Compared performance across pipelines to identify the ideal model for a certain task, analyzing results for accuracy, efficiency, and visual consistency for move&resize pipeline. And use masks of different objects in the image to identify the most ideal object for the task.
-? Designed and implemented a checkpoint save-and-resume mechanism, allowing the system to automatically save progress and resume operations seamlessly after interruptions.
+
+- Debugged and optimized existing image editing pipelines, including diffusion models and HuggingFace frameworks, to address challenges in large-scale image editing tasks.
+- Configured and executed various scripts for the AnyEdit project, including setting up the environment(e.g., Conda), downloading pre-trained weights, and running multiple pipelines with specified parameters.
+- Compared performance across pipelines to identify the ideal model for a certain task, analyzing results for accuracy, efficiency, and visual consistency for move&resize pipeline. And use masks of different objects in the image to identify the most ideal object for the task.
+- Designed and implemented a checkpoint save-and-resume mechanism, allowing the system to automatically save progress and resume operations seamlessly after interruptions.
 
 **Contextual Synthesis for Comprehensive Multi-modal Description
 *Collaborate with Hongjun Liu, Mar 2024 - Jun 2024
-? Built a Retrieval-Augmented Generation (RAG) knowledge base by constructing datasets that pair comic images with contextual information retrieved from Wikipedia, utilizing Contriver, a powerful multilingual and cross-lingual retrieval model.
-? Enabled language models like GPT to generate contextually accurate responses by retrieving relevant comic descriptions from the knowledge base and combining them with generated image descriptions.
+
+- Built a Retrieval-Augmented Generation (RAG) knowledge base by constructing datasets that pair comic images with contextual information retrieved from Wikipedia, utilizing Contriver, a powerful multilingual and cross-lingual retrieval model.
+- Enabled language models like GPT to generate contextually accurate responses by retrieving relevant comic descriptions from the knowledge base and combining them with generated image descriptions.
 
 ### Other Projects
 
@@ -82,18 +84,21 @@ Here are some interesting project I have done in my courses and spare time, you 
 -----
 **2D Game Development in NUS School of Computing Summer Workshop
 *Lecturer: Kelvin Sung, Jun 2023
-? Actively participated in the entire game development process, from the initial proposal, creating prototypes, and rough demos, through alpha and beta testing, to the final player testing and game release.
-? Build a solid turn-based game system to support multiple players and their skill casting at arbitrary time, using Unity and C#.
-? **Achieved an A+ score** (top 5% in the course), and [our game](https://fluuuegel.github.io/WebGL/) secured the **2nd place** in the final showcase. Remarkably, this was accomplished without any prior hands-on experience in Unity, while competing against seasoned game developers in the course.
+
+- Actively participated in the entire game development process, from the initial proposal, creating prototypes, and rough demos, through alpha and beta testing, to the final player testing and game release.
+- Build a solid turn-based game system to support multiple players and their skill casting at arbitrary time, using Unity and C#.
+- **Achieved an A+ score** (top 5% in the course), and [our game](https://fluuuegel.github.io/WebGL/) secured the **2nd place** in the final showcase. Remarkably, this was accomplished without any prior hands-on experience in Unity, while competing against seasoned game developers in the course.
 
 **DAMO Academy & ModelScope Practical AIGC Training Program
 *Aug 2023 - Sep 2023
-? Created stylized AIGC styles based on base model majicMix-v6 by prompt-engineering to create solid 
+
+- Created stylized AIGC styles based on base model majicMix-v6 by prompt-engineering to create solid 
 art style, and trained LoRA to make New Year Style portraits.
-? Integrated new styles we create into facechain, a deep-learning toolchain for generating your DigitalTwin released by modelscope.
-? Won **3rd prize in the 6th Open Source Innovation Competition** for the new portrait style we provided.
+- Integrated new styles we create into facechain, a deep-learning toolchain for generating your DigitalTwin released by modelscope.
+- Won **3rd prize in the 6th Open Source Innovation Competition** for the new portrait style we provided.
 
 **Zhejiang University B/S Software Development Course (96/100)
 *Course Project: Building a MQTT server for managing Internet of Things (IoT) devices.*
-? Utilized the UmiJS framework, Ant Design component library and React to build a user interface for device management. Implemented features include login authentication, data analytics, and device location tracking.
-? Adopted Go as the programming language for backend development, integrated with the Gin framework for efficient architecture, and utilized GORM for seamless database operations, all while working with a MySQL database.
+
+- Utilized the UmiJS framework, Ant Design component library and React to build a user interface for device management. Implemented features include login authentication, data analytics, and device location tracking.
+- Adopted Go as the programming language for backend development, integrated with the Gin framework for efficient architecture, and utilized GORM for seamless database operations, all while working with a MySQL database.
