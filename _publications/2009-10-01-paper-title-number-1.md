@@ -1,7 +1,7 @@
 ---
 title: "AnyEdit: Mastering Unified High-Quality Image Editing for Any Idea"
 collection: publications
-category: manuscripts
+category: conference paper
 permalink: /publication/AnyEdit
 excerpt: 'AnyEdit, a comprehensive multi-modal instruction editing dataset, comprising 2.5 million high-quality editing pairs spanning over 20 editing types and five domains.'
 date: 2025-1-25
