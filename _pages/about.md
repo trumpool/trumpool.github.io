@@ -9,15 +9,16 @@ redirect_from:
 
 <!-- This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io). -->
 
-I'm an undergraduate from [College of Computer Science](http://www.en.cs.zju.edu.cn/), [Zhejiang University](https://www.zju.edu.cn/). 
+# Xiaoyang Wan
 
-My research interest includes natural language processing, multimodal models and image editing.
+I am a master’s student in the [Computer and Information Program](https://www.cis.upenn.edu/) at [University of Pennsylvania](https://www.upenn.edu/). My current research focuses on natural language processing (NLP), multimodal models, and image editing.
 
-I am very fortunate to be advised by [Prof. SiLiang Tang](https://person.zju.edu.cn/en/siliang) and [Prof. Juncheng Li](https://scholar.google.com.hk/citations-user=lm9s-QgAAAAJ&hl=zh-CN) of DCD Lab from [School of Computer Science](http://www.en.cs.zju.edu.cn/), Zhejiang University. 
+During my undergraduate years at [Zhejiang University](https://www.zju.edu.cn/), I had the privilege of being advised by [Prof. SiLiang Tang](https://person.zju.edu.cn/en/siliang) and [Prof. Juncheng Li](https://scholar.google.com.hk/citations?user=lm9s-QgAAAAJ&hl=zh-CN) from the DCD Lab in the [School of Computer Science](http://www.en.cs.zju.edu.cn/). Their mentorship significantly shaped my academic interests and approach to research.
 
-You can find my CV here: [Xiaoyang Wan's Curriculum Vitae](../assets/CV.pdf).
+You can find my [Curriculum Vitae](../assets/CV.pdf) and check out my work on [Github](https://github.com/trumpool).
 
-[Email](3210105708@zju.edu.cn) / [Github](https://github.com/trumpool)
+Feel free to contact me via email at [wan3@seas.upenn.edu](mailto:wan3@seas.upenn.edu).
+
 
 <!-- A data-driven personal website
 ======
