@@ -64,7 +64,7 @@ More info about configuring Academic Pages can be found in [the guide](https://a
 Here is my research experience. I am interested in the intersect of large language model and image comprehension. You are welcome to contact with me.
 
 -----
-### AnyEdit: Unified High-Quality Image Edit with Any Idea （Accepted By CVPR 2025）
+### AnyEdit: Unified High-Quality Image Edit with Any Idea  （CVPR 2025 Oral, Best paper candidate）
 #### Advisors: Juncheng Li, Aug 2024 - Jan 2025
 
 - Debugged and optimized existing image editing pipelines, including diffusion models and HuggingFace frameworks, to address challenges in large-scale image editing tasks.
