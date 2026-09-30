@@ -7,6 +7,8 @@ redirect_from:
   - /resume
 ---
 
+[Download the PDF version](/assets/CV.pdf)
+
 ### Area of interest
 
 - Multimodal Model
@@ -17,31 +19,62 @@ redirect_from:
 
 -----
 
-- Zhejiang University Zhejiang, China
-- BS in Computer Science Sep 2021 - Jun 2025
-  - GPA: 3.96 / 4.00 (Average Score: 90.71/100;)
+- University of Pennsylvania, Philadelphia, PA
+- MS in Computer and Information Science, Sep 2025 - May 2027
+
+- Zhejiang University, Zhejiang, China
+- BS in Computer Science and Technology, Sep 2021 - May 2025
+  - GPA: 3.96 / 4.00 (Average Score: 90.71/100)
 - **Core courses:**
   - CS: Fundamental Data Structure (98/100), B/S Software Development (96/100), Operating System (98/100), C Programming(94/100), Computer Organization(93/100), Database System(90/100), Natural Language Processing(95/100)
   - Mathematics: Computational Theory (95/100), Probability Theory(95/100), Calculus (93/100), Linear Algebra(91/100)
 
-### Research Experience
+### Professional Experience
 
 -----
-### AnyEdit: Unified High-Quality Image Edit with Any Idea
-#### Advisors: Juncheng Li, Aug 2024 - Jan 2025
+### Upstart: Machine Learning Engineer Intern
+#### San Jose, CA, Jun 2026 - Aug 2026
 
-- Debugged and optimized existing image editing pipelines, including diffusion models and HuggingFace frameworks, to address challenges in large-scale image editing tasks.
-- Configured and executed various scripts for the AnyEdit project, including setting up the environment(e.g., Conda), downloading pre-trained weights, and running multiple pipelines with specified parameters.
-- Compared performance across pipelines to identify the ideal model for a certain task, analyzing results for accuracy, efficiency, and visual consistency for move&resize pipeline. And use masks of different objects in the image to identify the most ideal object for the task.
-- Designed and implemented a checkpoint save-and-resume mechanism, allowing the system to automatically save progress and resume operations seamlessly after interruptions.
+- Optimized a **Metaflow** transaction-embedding pipeline via **16 single-GPU BERT** shards and indexed **Parquet** reads; in validation runs: **2x** speedup, **80%** lower cost, **90%** less peak shard RAM.
+- Replaced **NumPy** scans with hash lookups over 7M trade accounts; cut whitelist filtering from **875s to 11s**.
+- Traced bin flips in **2.13%** of borrower records to 1-ULP **NumPy log1p** drift across CPU and library versions; froze raw-amount thresholds for **1e-5** embedding parity across hosts.
+- Fixed **AWS Batch** GPU contention via device pinning, and **16-min** TCP stalls via a request timeout in the shared Metaflow `@batch` decorator.
+- Benchmarked six-bag **PyTorch** GPU training with cached feature matrices and parallel prep; cut runtime from **3h21m to 1h38m**, compute cost by **73%**, and prep time by **37%**.
 
-### Contextual Synthesis for Comprehensive Multi-modal Description
-#### Collaborate with Hongjun Liu, Mar 2024 - Jun 2024
+### Molardata & 2077 AI: Machine Learning Engineer Intern
+#### Zhejiang, China, Apr 2025 - Aug 2025
 
-- Built a Retrieval-Augmented Generation (RAG) knowledge base by constructing datasets that pair comic images with contextual information retrieved from Wikipedia, utilizing Contriver, a powerful multilingual and cross-lingual retrieval model.
-- Enabled language models like GPT to generate contextually accurate responses by retrieving relevant comic descriptions from the knowledge base and combining them with generated image descriptions.
+- Built a **LangChain** generator-critic-judge pipeline that generated adversarial test cases for **2,700** Codeforces problems: **GPT-4o** wrote generator scripts, **GPT-4o-mini** flagged missing attack types, and a GPT-4o judge scored coverage and returned feedback.
+- Validated tests with an input verifier plus reference and known-wrong solutions (near-**100%** error detection in a **20-problem** pilot); ran up to three feedback rounds with per-step **checkpoints** for resumable runs.
+- Auto-validated **1,700** problems; **200/400** reviewed test suites passed subsequent human quality checks.
+- Built a **FLUX** three-turn editing MVP for **200** image sequences: GPT-4 wrote edit prompts and target captions, a vision model captioned each result, and an **LLM judge** checked it against the target caption.
+- Achieved an **83%** manual-review pass rate on 200 sequences; refined prompts to catch left-right position swaps.
 
-### Project Experience
+### DCD Lab, Zhejiang University: Research Assistant
+#### Advisor: Juncheng Li, Jun 2024 - Jan 2025
+
+- Adapted and ran seven existing image-editing data pipelines (add, remove, move, background, material, tone, rotation), producing **500K+** of the **2.5M** AnyEdit image pairs.
+- Split editing instructions into index ranges across **two GPUs** and used skip-if-exists **checkpointing**, so interrupted batches resumed without regenerating finished images.
+- Compared pipelines for the move & resize edit type on accuracy, efficiency, and visual consistency, and used object masks to choose the most suitable object to edit.
+- Evaluated generated edits with **CLIP**, **DINO**, and L1 metrics.
+
+### Selected Project
+
+-----
+### Multimodal RAG: Anime-to-Manga Retrieval
+#### Student research MVP with Hongjun Liu, Jan 2024 - Apr 2024
+
+- Implemented an anime-to-manga **RAG** MVP: embedded manga pages with **CLIP ViT-L/14** and stored the vectors in Docker-hosted **Milvus** with page descriptions and metadata for cosine search.
+- Crawled **100+** annotated manga pages spanning **75 chapters** from a manga wiki; filtered out non-story pages such as ads.
+- Retrieved the **top-5** pages for each anime frame and passed them with their descriptions to **GPT-4V** to generate plot-aware scene descriptions; built a **Gradio** demo.
+
+### Publication
+
+-----
+
+- **CVPR 2025 Oral**: [AnyEdit: Mastering Unified High-Quality Image Editing for Any Idea](https://arxiv.org/abs/2411.15738). Q. Yu, W. Chow, Z. Yue, K. Pan, Y. Wu, **X. Wan**, J. Li, S. Tang, H. Zhang, and Y. Zhuang.
+
+### Other Projects
 
 -----
 ### 2D Game Development in NUS School of Computing Summer Workshop
@@ -69,7 +102,11 @@ art style, and trained LoRA to make New Year Style portraits.
 
 -----
 
-- Computer Skills: Experienced with PyTorch for deep learning model development. Proficient inUnity for creating interactive game environments. Skilled in Docker for efficient model deployment and environment management.
+- **Programming & Systems**: Python, C++, Go, SQL, Linux, Git, Multithreading, TCP Networking
+- **Machine Learning**: PyTorch, scikit-learn, Transformers, BERT, MPNet, FastText, GPU Inference, Model Training
+- **Data Engineering**: NumPy, pandas, Parquet/PyArrow, Feature Engineering, Batch Processing, Vectorization, Caching
+- **LLM & Vision**: LangChain, Multi-Agent Systems, Prompt Engineering, LLM Evaluation, CLIP, Diffusion Models, Milvus
+- **Cloud & MLOps**: AWS Batch, EC2, S3, Metaflow, MLflow, Docker, Workflow Monitoring, Checkpointing
 - Language Skills: Strong English communication abilities, with a **TOEFL score of 114**, including 26 in speaking and 28 in writing.
 - GRE: 328 Verbal Reasoning:158, Quantitative Reasoning:170, Analytical Writing:3.5 (Sep 2024)
 

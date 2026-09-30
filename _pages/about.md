@@ -11,7 +11,7 @@ redirect_from:
 
 # Xiaoyang Wan
 
-I am a master’s student in the [Computer and Information Program](https://www.cis.upenn.edu/) at [University of Pennsylvania](https://www.upenn.edu/). My current research focuses on natural language processing (NLP), multimodal models, and image editing.
+I am a master’s student in the [Computer and Information Science](https://www.cis.upenn.edu/) program at [University of Pennsylvania](https://www.upenn.edu/). My current research focuses on natural language processing (NLP), multimodal models, and image editing. In summer 2026, I worked as a Machine Learning Engineer Intern at [Upstart](https://www.upstart.com/) on the personal-loan ML platform.
 
 During my undergraduate years at [Zhejiang University](https://www.zju.edu.cn/), I had the privilege of being advised by [Prof. SiLiang Tang](https://person.zju.edu.cn/en/siliang) and [Prof. Juncheng Li](https://scholar.google.com.hk/citations?user=lm9s-QgAAAAJ&hl=zh-CN) from the DCD Lab in the [School of Computer Science](http://www.en.cs.zju.edu.cn/). Their mentorship significantly shaped my academic interests and approach to research.
 
@@ -59,24 +59,33 @@ For more info
 ------
 More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful. -->
 
+### Experience
+
+- **Machine Learning Engineer Intern, Upstart** (Jun 2026 - Aug 2026): sped up a Metaflow feature pipeline with GPU sharding and indexed Parquet reads, traced cross-machine feature drift to 1-ULP `numpy.log1p` differences, and fixed GPU contention and TCP stalls on AWS Batch.
+- **Machine Learning Engineer Intern, Molardata & 2077 AI** (Apr 2025 - Aug 2025): built a LangChain generator-critic-judge pipeline that generated adversarial test cases for 2,700 Codeforces problems, and an LLM-judged pipeline for multi-turn image-editing data.
+- **Research Assistant, DCD Lab, Zhejiang University** (Jun 2024 - Jan 2025): data pipelines for AnyEdit (CVPR 2025 Oral).
+
+See my [CV](/cv/) for details.
+
 ### My Research Experience
 
 Here is my research experience. I am interested in the intersect of large language model and image comprehension. You are welcome to contact with me.
 
 -----
-### AnyEdit: Unified High-Quality Image Edit with Any Idea  （CVPR 2025 Oral, Best paper candidate）
-#### Advisors: Juncheng Li, Aug 2024 - Jan 2025
+### AnyEdit: Mastering Unified High-Quality Image Editing for Any Idea (CVPR 2025 Oral)
+#### Advisor: Juncheng Li, Jun 2024 - Jan 2025
 
-- Debugged and optimized existing image editing pipelines, including diffusion models and HuggingFace frameworks, to address challenges in large-scale image editing tasks.
-- Configured and executed various scripts for the AnyEdit project, including setting up the environment(e.g., Conda), downloading pre-trained weights, and running multiple pipelines with specified parameters.
-- Compared performance across pipelines to identify the ideal model for a certain task, analyzing results for accuracy, efficiency, and visual consistency for move&resize pipeline. And use masks of different objects in the image to identify the most ideal object for the task.
-- Designed and implemented a checkpoint save-and-resume mechanism, allowing the system to automatically save progress and resume operations seamlessly after interruptions.
+- Adapted and ran seven existing image-editing data pipelines (add, remove, move, background, material, tone, rotation), producing 500K+ of the 2.5M AnyEdit image pairs.
+- Split editing instructions into index ranges across two GPUs and used skip-if-exists checkpointing, so interrupted batches resumed without regenerating finished images.
+- Compared pipelines for the move & resize edit type on accuracy, efficiency, and visual consistency, and used object masks to choose the most suitable object to edit.
+- Evaluated generated edits with CLIP, DINO, and L1 metrics.
 
-### Contextual Synthesis for Comprehensive Multi-modal Description
-#### Collaborate with Hongjun Liu, Mar 2024 - Jun 2024
+### Multimodal RAG: Anime-to-Manga Retrieval
+#### Student research MVP with Hongjun Liu, Jan 2024 - Apr 2024
 
-- Built a Retrieval-Augmented Generation (RAG) knowledge base by constructing datasets that pair comic images with contextual information retrieved from Wikipedia, utilizing Contriver, a powerful multilingual and cross-lingual retrieval model.
-- Enabled language models like GPT to generate contextually accurate responses by retrieving relevant comic descriptions from the knowledge base and combining them with generated image descriptions.
+- Implemented an anime-to-manga RAG MVP: embedded manga pages with CLIP ViT-L/14 and stored the vectors in Docker-hosted Milvus with page descriptions and metadata for cosine search.
+- Crawled 100+ annotated manga pages spanning 75 chapters from a manga wiki; filtered out non-story pages such as ads.
+- Retrieved the top-5 pages for each anime frame and passed them with their descriptions to GPT-4V to generate plot-aware scene descriptions; built a Gradio demo.
 
 ### Other Projects
 
