@@ -35,38 +35,40 @@ redirect_from:
 ### Upstart: Machine Learning Engineer Intern
 #### San Jose, CA, Jun 2026 - Aug 2026
 
-- Optimized a **Metaflow** transaction-embedding pipeline via **16 single-GPU BERT** shards and indexed **Parquet** reads; in validation runs: **2x** speedup, **80%** lower cost, **90%** less peak shard RAM.
-- Replaced **NumPy** scans with hash lookups over 7M trade accounts; cut whitelist filtering from **875s to 11s**.
-- Traced bin flips in **2.13%** of borrower records to 1-ULP **NumPy log1p** drift across CPU and library versions; froze raw-amount thresholds for **1e-5** embedding parity across hosts.
-- Fixed **AWS Batch** GPU contention via device pinning, and **16-min** TCP stalls via a request timeout in the shared Metaflow `@batch` decorator.
-- Benchmarked six-bag **PyTorch** GPU training with cached feature matrices and parallel prep; cut runtime from **3h21m to 1h38m**, compute cost by **73%**, and prep time by **37%**.
+- Scaled BERT embeddings feeding the personal-loan underwriting model across **16 single-GPU** Metaflow shards with indexed **Parquet** reads; validation runs: **2x** faster, **80%** cheaper, **90%** less peak RAM.
+- Traced bin flips in **2.13%** of borrower records to a 1-ULP **NumPy log1p** drift across hosts; froze raw-amount thresholds to restore **1e-5** embedding parity and remove a source of train/serve skew.
+- Found CPU tokenization starving GPU inference and vectorized it, lifting GPU utilization **~4x**.
+- Benchmarked GPU training of a six-bag **PyTorch** ensemble with GPU-resident feature matrices and parallel feature prep; verified **1e-5** CPU/GPU output parity and cut runtime **3h21m to 1h38m** and cost **73%**.
+- Shipped fixes for **AWS Batch** GPU contention and **16-min** TCP stalls in the company-wide `@batch` decorator.
 
 ### Molardata & 2077 AI: Machine Learning Engineer Intern
 #### Zhejiang, China, Apr 2025 - Aug 2025
 
-- Built a **LangChain** generator-critic-judge pipeline that generated adversarial test cases for **2,700** Codeforces problems: **GPT-4o** wrote generator scripts, **GPT-4o-mini** flagged missing attack types, and a GPT-4o judge scored coverage and returned feedback.
-- Validated tests with an input verifier plus reference and known-wrong solutions (near-**100%** error detection in a **20-problem** pilot); ran up to three feedback rounds with per-step **checkpoints** for resumable runs.
-- Auto-validated **1,700** problems; **200/400** reviewed test suites passed subsequent human quality checks.
-- Built a **FLUX** three-turn editing MVP for **200** image sequences: GPT-4 wrote edit prompts and target captions, a vision model captioned each result, and an **LLM judge** checked it against the target caption.
-- Achieved an **83%** manual-review pass rate on 200 sequences; refined prompts to catch left-right position swaps.
+- Built a **LangChain** multi-agent pipeline (**GPT-4o** generator, **GPT-4o-mini** critic for missed attack types, GPT-4o coverage judge) that produced validated adversarial tests for **1,700** Codeforces problems.
+- Gated LLM verdicts behind execution checks (input verifier, reference and known-wrong solutions), reaching near-**100%** error detection in a pilot; ran up to three feedback rounds with per-step **checkpoints**.
+- Built an **LLM-as-judge** for **200** three-turn **FLUX** image-editing sequences, comparing result and target captions; **83%** passed manual review, vs. an embedding baseline that caught only half of identity drifts.
 
 ### DCD Lab, Zhejiang University: Research Assistant
 #### Advisor: Juncheng Li, Jun 2024 - Jan 2025
 
-- Adapted and ran seven existing image-editing data pipelines (add, remove, move, background, material, tone, rotation), producing **500K+** of the **2.5M** AnyEdit image pairs.
-- Split editing instructions into index ranges across **two GPUs** and used skip-if-exists **checkpointing**, so interrupted batches resumed without regenerating finished images.
-- Compared pipelines for the move & resize edit type on accuracy, efficiency, and visual consistency, and used object masks to choose the most suitable object to edit.
-- Evaluated generated edits with **CLIP**, **DINO**, and L1 metrics.
+- Adapted and ran seven image-editing data pipelines, producing **500K+** training pairs for AnyEdit (**CVPR 2025 Oral**); evaluated edits with **CLIP**, **DINO**, and L1 metrics.
+- Sharded generation across two GPUs with skip-if-exists **checkpointing** for resumable batches.
 
-### Selected Project
+### Selected Projects
 
 -----
-### Multimodal RAG: Anime-to-Manga Retrieval
-#### Student research MVP with Hongjun Liu, Jan 2024 - Apr 2024
+### Flight Delay Prediction
+#### CIS 5450 Big Data Analytics, Team of 4 (owned modeling), Apr 2026
 
-- Implemented an anime-to-manga **RAG** MVP: embedded manga pages with **CLIP ViT-L/14** and stored the vectors in Docker-hosted **Milvus** with page descriptions and metadata for cosine search.
-- Crawled **100+** annotated manga pages spanning **75 chapters** from a manga wiki; filtered out non-story pages such as ads.
-- Retrieved the **top-5** pages for each anime frame and passed them with their descriptions to **GPT-4V** to generate plot-aware scene descriptions; built a **Gradio** demo.
+- Modeled 15+ minute delays on **6.8M** 2024 U.S. flights joined with NOAA hourly weather, progressing from logistic regression and random forest to **XGBoost** and **LightGBM** under a time-based split.
+- Tuned XGBoost to **0.817 AUC**; class weights beat SMOTE on recall and AUC, a tuned threshold gave 0.663 precision at 0.525 recall, and AUC held within **0.002** on the full 5.6M-row set.
+- Tested delay drivers with permutation tests (budget vs. legacy carriers, hub vs. non-hub), bootstrap CIs (summer vs. winter), and a Monte Carlo χ² test for weather.
+
+### QUAKER: Two-Stage Product Retrieval
+#### CIS 5200 Machine Learning Course Project, Dec 2025
+
+- Fine-tuned a **BERT-large** category classifier (~90% top-4 hit rate) to filter items before **E5** ranking on 21K vague queries; reached **74.8%** top-200 accuracy, **+32** pts over TF-IDF.
+- Traced a batched-vs-single scoring mismatch to per-batch padding lengths and fixed it with fixed-length padding; precomputed item embeddings to make evaluation **~45x** faster.
 
 ### Publication
 
@@ -77,6 +79,13 @@ redirect_from:
 ### Other Projects
 
 -----
+### Multimodal RAG: Anime-to-Manga Retrieval
+#### Student research MVP with Hongjun Liu, Jan 2024 - Apr 2024
+
+- Implemented an anime-to-manga **RAG** MVP: embedded manga pages with **CLIP ViT-L/14** and stored the vectors in Docker-hosted **Milvus** with page descriptions and metadata for cosine search.
+- Crawled **100+** annotated manga pages spanning **75 chapters** from a manga wiki; filtered out non-story pages such as ads.
+- Retrieved the **top-5** pages for each anime frame and passed them with their descriptions to **GPT-4V** to generate plot-aware scene descriptions; built a **Gradio** demo.
+
 ### 2D Game Development in NUS School of Computing Summer Workshop
 #### Lecturer: Kelvin Sung, Jun 2023
 
@@ -102,11 +111,11 @@ art style, and trained LoRA to make New Year Style portraits.
 
 -----
 
-- **Programming & Systems**: Python, C++, Go, SQL, Linux, Git, Multithreading, TCP Networking
-- **Machine Learning**: PyTorch, scikit-learn, Transformers, BERT, MPNet, FastText, GPU Inference, Model Training
-- **Data Engineering**: NumPy, pandas, Parquet/PyArrow, Feature Engineering, Batch Processing, Vectorization, Caching
-- **LLM & Vision**: LangChain, Multi-Agent Systems, Prompt Engineering, LLM Evaluation, CLIP, Diffusion Models, Milvus
-- **Cloud & MLOps**: AWS Batch, EC2, S3, Metaflow, MLflow, Docker, Workflow Monitoring, Checkpointing
+- **Statistics & Modeling**: Hypothesis Testing, Supervised Learning, XGBoost, LightGBM, Class Imbalance, Model Validation
+- **Machine Learning**: PyTorch, scikit-learn, BERT, E5, Embeddings, Feature Engineering, Ensembles, LLM-as-Judge
+- **Data**: Python, SQL, NumPy, pandas, Parquet/PyArrow, Large-Scale Batch Processing, Vectorization
+- **LLM & Vision**: LangChain, Multi-Agent Systems, Prompt Engineering, CLIP, Diffusion Models
+- **Platforms**: Metaflow, AWS Batch, EC2, S3, Docker, MLflow, GPU Training & Inference, Linux, Git
 - Language Skills: Strong English communication abilities, with a **TOEFL score of 114**, including 26 in speaking and 28 in writing.
 - GRE: 328 Verbal Reasoning:158, Quantitative Reasoning:170, Analytical Writing:3.5 (Sep 2024)
 
