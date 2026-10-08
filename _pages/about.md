@@ -17,7 +17,7 @@ During my undergraduate years at [Zhejiang University](https://www.zju.edu.cn/),
 
 You can find my [Curriculum Vitae](../assets/CV.pdf) and check out my work on [Github](https://github.com/trumpool).
 
-Feel free to contact me via email at [wan3@seas.upenn.edu](mailto:wan3@seas.upenn.edu).
+Feel free to contact me via email at [wan3@engineering.upenn.edu](mailto:wan3@engineering.upenn.edu).
 
 
 <!-- A data-driven personal website
